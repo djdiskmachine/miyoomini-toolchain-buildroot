@@ -11,6 +11,8 @@ After building the first time, `make shell` will skip building and drop into the
 ## Workflow
 
 `cd` into `~/buildroot` and run `make sdk` (or optionally `make menuconfig` first to add additional libraries).
+### -lasound not preconfigured and can be found in `make menuconfig` under
+#### Target packages -> Audio and video applications -> alsa-utils
 
 Then you can copy out individual binaries, libraries, and headers from `~/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/`
 or return to `~` and run `./package-toolchain.sh` to generate `~/workspace/miyoomini-toolchain.tar.xz`.

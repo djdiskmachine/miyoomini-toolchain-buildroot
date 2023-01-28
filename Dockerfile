@@ -1,26 +1,21 @@
 FROM debian:buster-slim
 ENV DEBIAN_FRONTEND noninteractive
 
-ENV TZ=America/New_York
+ENV TZ=Sweden/Stockholm
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 RUN apt-get -y update && apt-get -y install \
 	bc \
     build-essential \
-    bzip2 \
-	bzr \
+	wget \
 	cmake \
 	cmake-curses-gui \
-	cpio \
-	git \
-	libncurses5-dev \
 	make \
-	rsync \
-	scons \
-	tree \
+    bzip2 \
 	unzip \
-	wget \
-  && rm -rf /var/lib/apt/lists/*
+	rsync \
+	libncurses5-dev \
+	file
 
 RUN mkdir -p /root/workspace
 WORKDIR /root
